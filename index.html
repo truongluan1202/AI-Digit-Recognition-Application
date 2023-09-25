@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>DIGIT RECOGNITION TOOL</h1>
+    <div class="container">
+      <div class="left-hand-side">
+        <div class="panel">
+          <canvas id="canvas" oncontextmenu="return false"></canvas>
+          <canvas id="scaling-canvas" oncontextmenu="return false"></canvas>
+        </div>
+        <div class="row">
+          <button id="clear-bg">Clear All</button>
+          <button>Draw</button>
+          <button>Erase</button>
+        </div>
+      </div>
+
+      <div class="right-hand-side">
+        <h2>Your digit is most likely a</h2>
+        <div id="predicted-number">...</div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
