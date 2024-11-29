@@ -110,9 +110,11 @@ h1 {
 .controls {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  /* gap: 1rem; */
+  width: 100%;
 }
 
+/* Style for each button */
 button {
   background-color: #00b3ff;
   color: #ffffff;
@@ -122,6 +124,10 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  flex-grow: 1; /* Make buttons stretch to fill available space */
+  min-width: 8rem;
+  text-align: center; /* Center text in button */
+  margin: 0.5rem;
 }
 
 button:hover {

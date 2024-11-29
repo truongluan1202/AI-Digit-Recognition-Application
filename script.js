@@ -52,7 +52,8 @@ let isDrawing = false,
   isErase = false,
   drawColor = "#fff",
   eraseColor = "#000",
-  lineWidth = 10;
+  lineWidth = 10,
+  eraseBtnPressed = false;
 
 const setCanvasBackground = () => {
   ctx.fillStyle = eraseColor;
@@ -81,10 +82,10 @@ window.onresize = function () {
 };
 
 canvas.addEventListener("mousedown", (e) => {
-  if (e.which === 1) {
+  if (e.which === 1 && eraseBtnPressed === false) {
     isDrawing = true;
   }
-  if (e.which === 3) {
+  if (e.which === 3 || eraseBtnPressed === true) {
     isErase = true;
   }
   ctx.beginPath();
@@ -126,6 +127,20 @@ clearBtn.addEventListener("click", () => {
 window.addEventListener("keydown", (e) => {
   if (e.key === "c" || e.key === "C") {
     clearBtn.click();
+  }
+});
+
+const eraseBtn = document.querySelector("#erase-btn");
+
+eraseBtn.addEventListener("click", () => {
+  eraseBtnPressed = !eraseBtnPressed;
+  if (eraseBtnPressed) {
+    //  blue
+    eraseBtn.style.backgroundColor = "#007bff";
+  }
+  if (!eraseBtnPressed) {
+    // light blue
+    eraseBtn.style.backgroundColor = "#00b3ff";
   }
 });
 
