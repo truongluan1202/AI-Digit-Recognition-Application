@@ -8,6 +8,14 @@
 html,
 body {
   height: 100%;
+  overflow: auto; /* Allow scrolling on the body */
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff;
 }
 
 body {
@@ -19,20 +27,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10px;
-}
-
-/* Header Styling */
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff;
-  margin-bottom: 4rem;
+  overflow-y: scroll; /* Enable vertical scrolling */
 }
 
 /* Main Container */
@@ -40,10 +35,12 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80%;
+  max-width: 800px;
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
 }
 
 .left-hand-side {
@@ -68,7 +65,7 @@ h1 {
 
 .right-hand-side h2 {
   font-size: 1.5rem;
-  color: #153677;
+  color: #e0e0e0; /* Lighter shade for better contrast */
 }
 
 #predicted-number {
@@ -110,7 +107,6 @@ h1 {
 .controls {
   display: flex;
   justify-content: center;
-  /* gap: 1rem; */
   width: 100%;
 }
 
@@ -124,12 +120,51 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  flex-grow: 1; /* Make buttons stretch to fill available space */
+  flex-grow: 1;
   min-width: 8rem;
-  text-align: center; /* Center text in button */
+  text-align: center;
   margin: 0.5rem;
 }
 
 button:hover {
   background-color: #007acc;
+}
+
+/* Introduction Section Styling */
+.intro-section {
+  text-align: left;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 700px;
+  padding: 10px;
+  overflow-y: auto; /* Allow vertical scroll for introduction if needed */
+}
+
+.intro-section h3 {
+  font-size: 1.5rem;
+  color: #ffffff; /* Use white for better readability */
+  margin-bottom: 1rem;
+}
+
+.intro-section p {
+  font-size: 1rem;
+  color: #dcdcdc; /* Light gray color for better contrast */
+  margin-bottom: 1rem;
+}
+
+.intro-section h4 {
+  font-size: 1.2rem;
+  color: #ffffff; /* White for consistency */
+  margin-bottom: 0.5rem;
+}
+
+.intro-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.intro-section ul li {
+  font-size: 1rem;
+  color: #dcdcdc; /* Lighter gray for readability */
+  margin-bottom: 0.5rem;
 }
